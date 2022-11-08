@@ -1,0 +1,95 @@
+@import "./variables";
+.login {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	@media screen and (max-width: 600px) {
+		grid-template-columns: 1fr;
+		background: linear-gradient(135deg, #00464355 25%, transparent 25%) -8px 0/
+				16px 16px,
+			linear-gradient(225deg, $secondary 25%, transparent 25%) -8px 0/ 16px 16px,
+			linear-gradient(315deg, #00464355 25%, transparent 25%) 0px 0/ 16px 16px,
+			linear-gradient(45deg, $secondary 25%, $primary 25%) 0px 0/ 16px 16px;
+	}
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	.login-info {
+		display: flex;
+		justify-content: center;
+		.info-container {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			padding: 20px;
+			box-shadow: -4px 5px 30px -11px rgba(0, 0, 0, 0.25);
+			border-radius: 10px;
+			max-width: 500px;
+			background-color: #fff;
+			.title {
+				color: $secondary;
+			}
+			.subtitle {
+				display: flex;
+				gap: 5px;
+				a {
+					text-decoration: none;
+				}
+			}
+			.login-form {
+				margin-top: 20px;
+				display: grid;
+				gap: 10px;
+				width: 100%;
+				max-width: 300px;
+				input {
+					border: 1px solid rgba(51, 51, 51, 0.121);
+					/* &:focus {
+                        border: 1px solid $primary;
+
+                    } */
+					padding: 5px 10px;
+					background-color: #fff !important;
+				}
+				.ant-form-item {
+					margin-bottom: 10px;
+					.ant-row {
+						flex-direction: column;
+					}
+					.ant-form-item-label {
+						text-align: left;
+					}
+				}
+			}
+		}
+	}
+
+	.login-bg {
+		// background-color: $primary;
+		// opacity: 0.4;
+		background: linear-gradient(135deg, #00464355 25%, transparent 25%) -8px 0/
+				16px 16px,
+			linear-gradient(225deg, $secondary 25%, transparent 25%) -8px 0/ 16px 16px,
+			linear-gradient(315deg, #00464355 25%, transparent 25%) 0px 0/ 16px 16px,
+			linear-gradient(45deg, $secondary 25%, $primary 25%) 0px 0/ 16px 16px;
+		height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		h1 {
+			font-size: 60px;
+			color: #000;
+			font-weight: bold;
+			opacity: 1 !important;
+			background-color: $secondary;
+			width: 100%;
+			text-align: center;
+			color: #fff;
+		}
+
+		@media screen and (max-width: 600px) {
+			display: none;
+		}
+	}
+}

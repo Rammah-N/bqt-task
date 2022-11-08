@@ -1,0 +1,13 @@
+@import "./variables";
+.ant-btn-primary {
+	border: none;
+	background-color: $secondary;
+	color: $primary;
+	font-weight: bold;
+	&:hover,
+	&:focus {
+		background-color: $primary;
+		color: $secondary;
+		border: none;
+	}
+}
