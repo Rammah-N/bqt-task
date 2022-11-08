@@ -5,10 +5,15 @@ import { Form, Input, Button } from "antd";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { Notify } from "notiflix";
 import { app } from "../../firebase";
+import { useDispatch } from "react-redux";
+import { setToDos } from "../../store/reducers/todos";
+import { setDevices } from "../../store/reducers/devices";
+import { setUser } from "../../store/reducers/user";
 const Register = () => {
 	const [loading, setLoading] = useState(false);
 	const auth = getAuth(app);
 	const navigate = useNavigate();
+	const dispatch = useDispatch()
 	const onFinish = (values) => {
 		setLoading(true);
 		createUserWithEmailAndPassword(auth, values.email, values.password)
@@ -19,6 +24,9 @@ const Register = () => {
 					{ showOnlyTheLastOne: true, timeout: 3000 }
 				);
 				setLoading(false);
+				dispatch(setToDos(null))
+				dispatch(setDevices(null))
+				dispatch(setUser(user))
 				navigate("/");
 			})
 			.catch((error) => {
